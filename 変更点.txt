@@ -1,0 +1,5 @@
+composer install
+
+npm install
+.gitignoreを編集
+.env.localを追加
