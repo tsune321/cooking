@@ -46,6 +46,20 @@ const Navigation = ({ user }) => {
                                 要素3
                             </NavLink>
                         </div>
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink
+                                href="/missions"
+                                active={usePathname() === '/missions'}>
+                                Mission
+                            </NavLink>
+                        </div>
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink
+                                href="/users"
+                                active={usePathname() === '/users'}>
+                                User
+                            </NavLink>
+                        </div>
                     </div>
 
                     {/* Settings Dropdown */}

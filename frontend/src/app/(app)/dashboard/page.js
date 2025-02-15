@@ -7,6 +7,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useState } from 'react'
+import MissionList from '@/components/MissionList'
 
 // カルーセルにする画像のリスト//
 const images = ['/dummy/1.jpg', '/dummy/2.jpg', '/dummy/3.jpg', '/dummy/4.jpg', '/dummy/5.jpg']
@@ -81,6 +82,7 @@ const Dashboard = () => {
                                     ))}
                                 </ul>
                             </div>
+                            <MissionList />
                             </div>
                         </div>
                     </div>
