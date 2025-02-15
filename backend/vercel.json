@@ -1,14 +1,22 @@
 {
     "builds": [
         {
-            "src": "*.js",
+            "src": "backend/public/index.php",
+            "use": "@vercel/php"
+        },
+        {
+            "src": "frontend/package.json",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
+            "src": "/api/(.*)",
+            "dest": "/backend/public/index.php"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/frontend/$1"
         }
     ]
 }
