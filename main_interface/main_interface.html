@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook King</title>
+    <link rel="stylesheet" href="main_interface.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Cook King Logo" class="logo">
+        </div>
+        <nav>
+            <a href="search.html" class="nav-link">🔍 レシピ検索</a>
+            <a href="ranking.html" class="nav-link">🏆 ランキング</a>
+            <a href="bookmarks.html" class="nav-link">🔖 ブックマーク</a>
+            <a href="badges.html" class="nav-link">🌟 バッチ</a>
+            <a href="profile.html" class="profile-icon">👤</a>
+        </nav>
+    </header>
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="images/roast_chicken.png" alt="Roast Chicken">
+        </div>
+        <div class="slide fade">
+            <img src="images/pizza_banner.png" alt="Pizza Banner">
+        </div>
+        <div class="slide fade">
+            <img src="images/salad_banner.png" alt="Salad Banner">
+        </div>
+        <div class="slide fade">
+            <img src="images/chicken_banner.png" alt="Chicken Banner">
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+    
+    
+
+    <section class="skills-section">
+        <div class="skill-box">
+            <img src="images/skill_cutting.png" alt="Cutting">
+            <span class="overlay-text">技能</span>
+        </div>
+        <div class="skill-box">
+            <img src="images/skill_community.png" alt="Community">
+            <span class="overlay-text">交流</span>
+        </div>
+        <div class="skill-box">
+            <img src="images/skill_cooking.png" alt="Cooking">
+            <span class="overlay-text">調理</span>
+        </div>
+    </section>
+    
+
+<section class="badges-section">
+    <h2>ユニックなバッジを集めよう</h2>
+    <div id="badgeContainer" class="badges-container">
+        <div class="badge">
+            <img src="images/egg.png" alt="Fried Egg Master">
+            <p>Fried Egg Master</p>
+        </div>
+        <div class="badge">
+            <img src="images/toast.png" alt="Toast Master">
+            <p>Toast Master</p>
+        </div>
+        <div class="badge">
+            <img src="images/onigiri.png" alt="Onigiri Master">
+            <p>Onigiri Master</p>
+        </div>
+        <div class="badge">
+            <img src="images/ochazuke.png" alt="Ochazuke Master">
+            <p>Ochazuke Master</p>
+        </div>
+    </div>
+</section>
+<div class="recipe-container">
+    <h2 class="recipe-title">人気のレシピ🔥</h2>
+    <div class="recipe-slider">
+        <div class="recipe-slide">
+            <img src="images/pizza.png" alt="Delicious Pizza">
+            <p class="recipe-name">Delicious Pizza</p>
+        </div>
+        <div class="recipe-slide">
+            <img src="images/burger.png" alt="Juicy Cheeseburger">
+            <p class="recipe-name">Juicy Cheeseburger</p>
+        </div>
+        <div class="recipe-slide">
+            <img src="images/swedish_meatball.png" alt="Swedish Meatballs">
+            <p class="recipe-name">Swedish Meatballs</p>
+        </div>
+        <div class="recipe-slide">
+            <img src="images/shoyu_ramen.png" alt="Shoyu Ramen">
+            <p class="recipe-name">Shoyu Ramen</p>
+        </div>
+        <div class="recipe-slide more-recipes">
+            <p class="recipe-name">More Recipes ➡️</p>
+        </div>
+    </div>
+    <button class="prev-recipe">⬅️</button>
+    <button class="next-recipe">➡️</button>
+</div>
+
+
+<div class="ranking-container"></div>
+
+    
+    
+    <script src="main_interface.js"></script>
+</body>
+</html>

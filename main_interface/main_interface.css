@@ -1,0 +1,368 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Navbar styling */
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #ff9900;
+}
+
+.profile-icon {
+  font-size: 20px;
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    display: none; /* Hide slides by default */
+    width: 100%;
+    height: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+section {
+  padding: 20px;
+}
+
+
+
+.badges-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.badge {
+  text-align: center;
+  width: 180px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.badge img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.badge p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.badge:hover {
+  transform: scale(1.1);
+}
+
+.badge:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.badges-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: url("./images/bbackground.png") center/cover no-repeat;
+  border-radius: 10px;
+}
+.badge p {
+  color: rgb(0, 0, 0); /* Change text color to white */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow for better contrast */
+}
+
+
+.user-avatar img {
+  border-radius: 50%;
+}
+
+.user-rank:nth-child(1) {
+  transform: scale(1.2);
+}
+
+.user-rank:nth-child(2), .user-rank:nth-child(3) {
+  transform: scale(1);
+}
+.skills-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.skill-box {
+  position: relative;
+  width: 30%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.skill-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.skill-box:hover img {
+  transform: scale(1.1);
+}
+
+.skill-box:hover .overlay-text {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.8;
+}
+.recipe.hovered {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.recipe img {
+  width: 100%;
+  max-width: 200px;  /* Adjust to fit your design */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.recipe-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.recipe-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.recipe-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.recipe-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.recipe-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left; /* Align title to the left */
+  padding-left: 20px; /* Add some spacing from the left */
+}
+
+
+.recipe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.recipe-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.recipe-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * (5 / 3)); /* Adjusting for 5 slides, 3 visible */
+  padding-left: 20px;
+  gap: 0.01px;
+}
+.recipe-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 100 5px; /* Adjust this to control spacing between images */
+
+}
+
+.recipe-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #000; /* Ensures text is visible */
+}
+
+
+.recipe-slide p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.recipe-slide img {
+  display: block;
+  width: 45%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+
+/* "More Recipes" Style */
+.more-recipes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  background: #f5f5f5;
+}
+
+
+
+.prev-recipe, .next-recipe {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.prev-recipe {
+  left: 10px;
+}
+
+.next-recipe {
+  right: 10px;
+}
+
+
+.user-rank.highlight {
+  transform: scale(1.2);
+  transition: transform 0.5s ease-in-out;
+  background-color: gold;
+  border-radius: 10px;
+}
+.ranking-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ranking-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.rank {
+  text-align: center;
+}
+
+.rank img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.first {
+  transform: scale(1.2);
+}
+
+.second, .third {
+  opacity: 0.8;
+}
