@@ -1,5 +1,3 @@
-composer install
+.envのMAIL_MAILER=smtp から MAIL_MAILER=log に変更
 
-npm install
-.gitignoreを編集
-.env.localを追加
+確認メールの内容をlogで確認できるようにした
