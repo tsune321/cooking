@@ -1,3 +1,5 @@
-Navigationを画面上部に固定と要素の追加
-ドロップダウンに要素を追加
-py-12 からpy-20
+フロント
+frontendで「npm install swiper@latest」を実行
+public/dummy/(画像5枚)を追加
+dashboard/page.jsに簡易的にスライダーを追加
+Navigationの<nav>にz-50を追記し、最前面に表示
