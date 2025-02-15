@@ -60,21 +60,25 @@ class User extends Authenticatable
             $missions = [
                 [
                     'user_id' => $user->id,
+                    'mission_id' => 1,
                     'mission' => 'ログインしよう',
                     'is_completed' => false,
                 ],
                 [
                     'user_id' => $user->id,
+                    'mission_id' => 2,
                     'mission' => 'いいねを5回押そう',
                     'is_completed' => false,
                 ],
                 [
                     'user_id' => $user->id,
+                    'mission_id' => 3,
                     'mission' => 'いいねを5回もらおう',
                     'is_completed' => false,
                 ],
                 [
                     'user_id' => $user->id,
+                    'mission_id' => 4,
                     'mission' => 'バトルに参加しよう',
                     'is_completed' => false,
                 ],
@@ -83,6 +87,7 @@ class User extends Authenticatable
             foreach ($missions as $missionData) {
                 Mission::create([
                     'user_id' => $user->id,
+                    'mission_id' => $missionData['mission_id'],
                     'mission' => $missionData['mission'],
                     'is_completed' => $missionData['is_completed'],
                 ]);
@@ -94,7 +99,6 @@ class User extends Authenticatable
                 'battle_rate' => 1000,
                 'win_count' => 0,
                 'gold' => 100,
-                'is_battled' => false,
             ]);
         });
     }
