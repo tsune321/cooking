@@ -1,5 +1,2 @@
 フロント
-frontendで「npm install swiper@latest」を実行
-public/dummy/(画像5枚)を追加
-dashboard/page.jsに簡易的にスライダーを追加
-Navigationの<nav>にz-50を追記し、最前面に表示
+簡易デイリーミッション追加(表面上)

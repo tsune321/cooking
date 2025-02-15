@@ -6,11 +6,28 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { useState } from 'react'
 
 // カルーセルにする画像のリスト//
 const images = ['/dummy/1.jpg', '/dummy/2.jpg', '/dummy/3.jpg', '/dummy/4.jpg', '/dummy/5.jpg']
 
+// ミッションのデータをここで定義（descriptionは未使用）
+const initialMissions = [
+    { title: 'ログインしよう', description: 'Buy ingredients for the weekly recipes.' },
+    { title: 'いいねを３回しよう', description: 'Prepare a healthy dinner for the week.' },
+    { title: 'いいねを５つもらおう', description: 'Do a 30-minute workout to stay healthy.' },
+    { title: 'バトルに参加しよう', description: 'Keep the kitchen tidy and organized.' },
+]
+
 const Dashboard = () => {
+    const [missions, setMissions] = useState(initialMissions);
+
+    const handleCompleteMission = (index) => {
+        const newMissions = [...missions];
+        newMissions[index] = { ...newMissions[index], completed: true };
+        setMissions(newMissions);
+    };
+
     return (
         <>
             {/* <Header title="Dashboard" /> */}
@@ -39,6 +56,31 @@ const Dashboard = () => {
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
+
+                                {/* デイリーリーミッションの枠 */}
+                            <div className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md">
+                                <h2 className="text-xl font-semibold text-gray-700">Dayly Mission</h2>
+                                <ul className="mt-4 space-y-4 text-gray-600">
+                                    {missions.map((mission, index) => (
+                                        <li key={index} className="flex items-start space-x-2">
+                                            <div className="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1"></div>
+                                            <div>
+                                                <p className="font-semibold">{mission.title}</p>
+                                                {/*<p className="text-sm">{mission.description}</p>*/}
+                                                {mission.completed ? (
+                                                    <p className="text-green-600 text-sm">Completed</p>
+                                                ) : (
+                                                    <button
+                                                        onClick={() => handleCompleteMission(index)}
+                                                        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md text-sm">
+                                                        完了
+                                                    </button>
+                                                )}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                             </div>
                         </div>
                     </div>
