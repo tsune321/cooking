@@ -1,5 +1,5 @@
-import Header from '@/app/(app)/Header';
-import MissionList from '@/components/MissionList'; // インポート名を修正
+import Header from '@/app/(app)/Header'
+import MissionList from '@/components/MissionList' // インポート名を修正
 
 export const metadata = {
   title: 'ミッション',
