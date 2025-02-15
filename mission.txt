@@ -1,0 +1,9 @@
+missionの表示方法
+追加したページに
+import MissionList from '@/components/MissionList'; 
+と記述
+後は追加したい部分に<MissionList />
+と入力するだけでok
+ミッションのシステム（クリア時に斜線が引かれる）を変えたいときは、
+\frontend\src\components\MissionList.js
+のclassname= の部分を変更すればok
