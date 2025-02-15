@@ -36,14 +36,14 @@ const Navigation = ({ user }) => {
                                 Dashboard
                             </NavLink>
                             <NavLink
-                                href="/dashboard"
-                                active={usePathname() === '/dashboard'}>
-                                要素2
+                                href="/battle"
+                                active={usePathname() === '/battle'}>
+                                バトル
                             </NavLink>
                             <NavLink
-                                href="/dashboard"
-                                active={usePathname() === '/dashboard'}>
-                                要素3
+                                href="/sns"
+                                active={usePathname() === '/sns'}>
+                                SNS
                             </NavLink>
                         </div>
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
