@@ -7,3 +7,4 @@ import MissionList from '@/components/MissionList';
 ミッションのシステム（クリア時に斜線が引かれる）を変えたいときは、
 \frontend\src\components\MissionList.js
 のclassname= の部分を変更すればok
+なんかデプロイできない

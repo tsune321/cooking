@@ -7,10 +7,6 @@ const UserList = () => {
         axios
             .get('/api/users')
             .then(res => res.data) // LaravelのJSON構造をそのまま取得
-            .catch(error => {
-                console.error(error)
-                return null // エラー時にnullを返しておく
-            }),
     )
 
     if (error) return 'An error has occurred.'
