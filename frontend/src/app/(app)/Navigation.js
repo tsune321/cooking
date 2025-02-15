@@ -9,6 +9,7 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import ShowGold from '@/components/ShowGold'
 
 const Navigation = ({ user }) => {
     const { logout } = useAuth()
@@ -55,6 +56,13 @@ const Navigation = ({ user }) => {
                         </div>
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
+                                href="/status"
+                                active={usePathname() === '/status'}>
+                                Status
+                            </NavLink>
+                        </div>
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink
                                 href="/users"
                                 active={usePathname() === '/users'}>
                                 User
@@ -64,6 +72,9 @@ const Navigation = ({ user }) => {
 
                     {/* Settings Dropdown */}
                     <div className="hidden sm:flex sm:items-center sm:ml-6">
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            Gold: <ShowGold />&emsp;
+                        </div>
                         <Dropdown
                             align="right"
                             width="48"

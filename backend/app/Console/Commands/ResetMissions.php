@@ -22,12 +22,10 @@ class ResetMissions extends Command
     {
         // Missionテーブルのすべてのレコードをリセット
         $missions = Mission::all();
-
         foreach ($missions as $mission) {
             // is_completed を false に設定
             $mission->update(['is_completed' => false]);
         }
-
         $this->info('全てのミッションをリセットしました');
     }
 }

@@ -4,15 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-class mission extends Model
+
+class Status extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'mission_id',
-        'mission', 
-        'is_completed',
+        'battle_rate', 
+        'win_count',
+        'gold',
+        'is_battled',
     ];
+
+    protected $table = 'status'; // テーブル名を指定
+
     public function user() {
         return $this->belongsTo(User::class);
     }

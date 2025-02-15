@@ -1,0 +1,10 @@
+ユーザに関するデータの表示方法
+追加したページに
+import ShowGold from '@/components/ShowGold'
+import ShowBattleRate from '@/components/ShowBattleRate'
+import IsBattled from '@/components/IsBattled'
+と記述
+後は追加したい部分に<ShowGold />（ゴールドを表示）、<ShowBattleRate />（レートを表示）、<IsBattled />（バトル可能かどうかを表示）
+と入力するだけでok
+IsBattledでは、statusテーブルのis_battledがfalseのときボタンが表示され、trueになるとミッションがクリアされてゴールドが30もらえる。
+ボタンが表示の部分は\frontend\src\components\IsBattled.jsにあるので変更してください
