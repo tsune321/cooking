@@ -49,6 +49,10 @@ class User extends Authenticatable
         return $this->hasMany(Mission::class);
     }
 
+    public function status() {
+        return $this->hasOne(Status::class); // ステータスとのリレーションを追加
+    }
+
     protected static function booted()
     {
         static::created(function ($user) {
@@ -83,6 +87,15 @@ class User extends Authenticatable
                     'is_completed' => $missionData['is_completed'],
                 ]);
             }
+
+            // 新しいユーザーが作成されたときにデフォルトのステータスを設定
+            Status::create([
+                'user_id' => $user->id,
+                'battle_rate' => 1000,
+                'win_count' => 0,
+                'gold' => 100,
+                'is_battled' => false,
+            ]);
         });
     }
 }
