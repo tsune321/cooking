@@ -4,7 +4,6 @@ import axios from '@/lib/axios'
 import { useState } from 'react'
 
 const IsBattled = () => {
-    // `/api/status` からデータを取得
     const { data, error, mutate } = useSWR('/api/status', async () => {
         try {
             const res = await axios.get('/api/status')
@@ -15,28 +14,39 @@ const IsBattled = () => {
         }
     })
 
-    // エラーハンドリング
+    const [errorMessage, setErrorMessage] = useState(null)
+
     if (error) return <p>エラーが発生しました。</p>
     if (!data) return <p>読み込み中...</p>
 
     const handleBattle = async () => {
         try {
-            // API にリクエストを送って `is_battled` を true に更新
-            await axios.put('/api/status/battle')
+            // goldが50未満の場合はエラーメッセージを表示し、処理を中断
+            if (data.status.gold < 50) {
+                setErrorMessage('ゴールドが足りません！')
+                return
+            }
 
-            // バトル状態をローカルで更新し、即時反映
-            if (data.status) {
-                data.status.is_battled = true
-                mutate({ ...data }) // mutateで即時反映
+            // バトル前にAPIにリクエストを送って、ゴールドを減らす処理を行う
+            const response = await axios.put('/api/status/battle')
+
+            if (response.data.status) {
+                // バックエンドから返ってきた最新のデータを即座に反映
+                mutate({ ...data, status: response.data.status })  // mutateで状態を更新
+                setErrorMessage(null)  // エラーメッセージをクリア
+            } else if (response.data.error) {
+                setErrorMessage(response.data.error)  // エラーメッセージ
             }
         } catch (error) {
             console.error('バトル状態の更新に失敗:', error)
+            setErrorMessage('バトル処理に失敗しました。')
         }
     }
 
     return (
         <div>
             <p>バトルステータス: {data.status?.is_battled ? 'バトル済み' : '未バトル'}</p>
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             {!data.status?.is_battled && (
                 <button onClick={handleBattle}>
                     バトルする
