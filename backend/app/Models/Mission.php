@@ -9,8 +9,8 @@ class mission extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'mission_id',
         'mission', 
-        'deadline',
         'is_completed',
     ];
     public function user() {

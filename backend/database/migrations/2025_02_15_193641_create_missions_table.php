@@ -11,8 +11,8 @@ class CreateMissionsTable extends Migration
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // usersテーブルとのリレーション
+            $table->integer('mission_id'); // ミッションid
             $table->string('mission'); // ミッション名
-            $table->timestamp('deadline'); // 期限
             $table->boolean('is_completed')->default(false); // ミッション完了フラグ
             $table->timestamps();
         });
