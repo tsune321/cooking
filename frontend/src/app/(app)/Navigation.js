@@ -16,7 +16,7 @@ const Navigation = ({ user }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <nav className="bg-white border-b border-gray-100">
+        <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100">
             {/* Primary Navigation Menu */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
@@ -28,12 +28,22 @@ const Navigation = ({ user }) => {
                             </Link>
                         </div>
 
-                        {/* Navigation Links */}
+                        {/* Navigation Links */}{/* いわゆるヘッダーっぽいところ */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
                                 href="/dashboard"
                                 active={usePathname() === '/dashboard'}>
                                 Dashboard
+                            </NavLink>
+                            <NavLink
+                                href="/dashboard"
+                                active={usePathname() === '/dashboard'}>
+                                要素2
+                            </NavLink>
+                            <NavLink
+                                href="/dashboard"
+                                active={usePathname() === '/dashboard'}>
+                                要素3
                             </NavLink>
                         </div>
                     </div>
@@ -64,6 +74,12 @@ const Navigation = ({ user }) => {
                             {/* Authentication */}
                             <DropdownButton onClick={logout}>
                                 Logout
+                            </DropdownButton>
+                            <DropdownButton onClick={logout}>
+                                要素B
+                            </DropdownButton>
+                            <DropdownButton onClick={logout}>
+                                要素C
                             </DropdownButton>
                         </Dropdown>
                     </div>

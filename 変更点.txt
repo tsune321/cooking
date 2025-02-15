@@ -1,3 +1,3 @@
-.envのMAIL_MAILER=smtp から MAIL_MAILER=log に変更
-
-確認メールの内容をlogで確認できるようにした
+Navigationを画面上部に固定と要素の追加
+ドロップダウンに要素を追加
+py-12 からpy-20
