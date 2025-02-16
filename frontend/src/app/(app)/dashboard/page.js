@@ -11,7 +11,7 @@ import { useState } from 'react'
 import MissionList from '@/components/MissionList'
 
 // カルーセルにする画像のリスト//
-const images = ['/dummy/1.jpg', '/dummy/2.jpg', '/dummy/3.jpg', '/dummy/4.jpg', '/dummy/5.jpg']
+const images = ['/dummy/1.png', '/dummy/2.png', '/dummy/3.png', '/dummy/4.png']
 
 // ミッションのデータをここで定義（descriptionは未使用）
 const initialMissions = [
@@ -63,7 +63,7 @@ const Dashboard = () => {
 
                                 {/* デイリーリーミッションの枠 */}
                                 <div className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md">
-                                    <h2 className="text-xl font-semibold text-gray-700">Dayly Mission</h2>
+                                    <h2 className="text-xl font-semibold text-gray-700">Mission</h2>
                                     <ul className="mt-4 space-y-4 text-gray-600">
                                         <MissionList />
                                     </ul>
