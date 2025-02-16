@@ -30,7 +30,7 @@ const IsBattled = () => {
             // バトル前にAPIにリクエストを送って、ゴールドを減らす処理を行う
             const response = await axios.put('/api/status/battle')
 
-            if (response.data.status) {
+            if (response.status === 200) {
                 // バックエンドから返ってきた最新のデータを即座に反映
                 mutate({ ...data, status: response.data.status })  // mutateで状態を更新
                 setErrorMessage(null)  // エラーメッセージをクリア
@@ -38,8 +38,12 @@ const IsBattled = () => {
                 setErrorMessage(response.data.error)  // エラーメッセージ
             }
         } catch (error) {
-            console.error('バトル状態の更新に失敗:', error)
-            setErrorMessage('バトル処理に失敗しました。')
+            if (error.response && error.response.data && error.response.data.error) {
+                setErrorMessage(error.response.data.error)
+            } else {
+                console.error('バトル状態の更新に失敗:', error)
+                setErrorMessage('バトル処理に失敗しました。')
+            }
         }
     }
 

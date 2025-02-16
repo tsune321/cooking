@@ -58,19 +58,28 @@ const Navigation = ({ user }) => {
                                 User
                             </NavLink>
                         </div>
+                        
                     </div>
 
                     {/* Settings Dropdown */}
                     <div className="hidden sm:flex sm:items-center sm:ml-6">
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            Gold: <ShowGold />&emsp;
+                            Gold: <ShowGold />
+                            &emsp;
                         </div>
                         <Dropdown
                             align="right"
                             width="48"
                             trigger={
                                 <button className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out">
-                                    <div>{user?.name}</div>
+                                    {/* アイコンを左側に表示 */}
+                                    {user?.icon && (
+                                        <img 
+                                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${user.icon}`} 
+                                        style={{ width: '20px', height: '20px' }} 
+                                      />
+                                    )}
+                                    <div className="ml-2">{user?.name}</div>
 
                                     <div className="ml-1">
                                         <svg
@@ -86,7 +95,14 @@ const Navigation = ({ user }) => {
                                     </div>
                                 </button>
                             }>
-                            {/* Authentication */}
+                            {/* プロフィールへのリンクを追加 }
+                            <DropdownButton
+                                onClick={() =>
+                                    (window.location.href = '/profile')
+                                }>
+                                Profile
+                            </DropdownButton>
+                            { ログアウトボタン */}
                             <DropdownButton onClick={logout}>
                                 Logout
                             </DropdownButton>

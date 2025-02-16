@@ -10,7 +10,8 @@ class Status extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'battle_rate', 
+        'battle_rate',
+        'likes', 
         'win_count',
         'gold',
         'is_battled',

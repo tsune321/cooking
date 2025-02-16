@@ -2,7 +2,7 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 
-const UserList = () => {
+const UserProfile = () => {
     const { data, error } = useSWR('/api/users', () =>
         axios
             .get('/api/users')
@@ -13,16 +13,14 @@ const UserList = () => {
             }),
     )
 
-    if (error) return 'An error has occurred.'
-    if (!data) return 'Loading...'
+    if (error) return <p>An error has occurred.</p>
+    if (!data) return <p>Loading...</p>
 
     return (
         <ul>
-            {data.user?.map(user => ( // `data.user` を参照
-                <li key={user.id}>{user.name}</li>
-            ))}
+            {data.user && <li key={data.user.id}>{data.user.name}</li>}
         </ul>
     )
 }
 
-export default UserList
+export default UserProfile

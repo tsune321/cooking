@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // usersテーブルとのリレーション
             $table->integer('battle_rate'); // レート
+            $table->integer('likes'); // バトル数
             $table->integer('win_count'); // 勝利数
             $table->integer('gold'); // ゴールド
             $table->boolean('is_battled')->default(false); // バトルフラグ

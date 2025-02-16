@@ -19,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'icon',
+        'description',
         'email',
         'password',
     ];
@@ -51,6 +53,30 @@ class User extends Authenticatable
 
     public function status() {
         return $this->hasOne(Status::class); // ステータスとのリレーションを追加
+    }
+
+    // 1人のユーザーが user_id_1 として参加したバトルを取得
+    public function battlesUser1()
+    {
+        return $this->hasMany(Battle::class, 'user_id_1');
+    }
+
+    // 1人のユーザーが user_id_2 として参加したバトルを取得
+    public function battlesUser2()
+    {
+        return $this->hasMany(Battle::class, 'user_id_2');
+    }
+
+    // 勝者としてのバトル
+    public function battlesWinner()
+    {
+        return $this->hasMany(BattleResult::class, 'winner_id');
+    }
+
+    // 敗者としてのバトル
+    public function battlesLoser()
+    {
+        return $this->hasMany(BattleResult::class, 'loser_id');
     }
 
     protected static function booted()
@@ -98,6 +124,7 @@ class User extends Authenticatable
                 'user_id' => $user->id,
                 'battle_rate' => 1000,
                 'win_count' => 0,
+                'likes' => 0,
                 'gold' => 100,
             ]);
         });
