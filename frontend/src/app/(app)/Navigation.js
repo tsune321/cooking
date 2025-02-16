@@ -17,7 +17,7 @@ const Navigation = ({ user }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <nav className="bg-white border-b border-gray-100">
+        <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 z-50">
             {/* Primary Navigation Menu */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
@@ -29,33 +29,35 @@ const Navigation = ({ user }) => {
                             </Link>
                         </div>
 
-                        {/* Navigation Links */}
+                        {/* Navigation Links */}{/* いわゆるヘッダーっぽいところ */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
                                 href="/dashboard"
                                 active={usePathname() === '/dashboard'}>
-                                Dashboard
+                                ホーム
                             </NavLink>
-                        </div>
-                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
-                                href="/missions"
-                                active={usePathname() === '/missions'}>
-                                Mission
+                                href="/battle"
+                                active={usePathname() === '/battle'}>
+                                バトル
+                            </NavLink>
+                            <NavLink
+                                href="/sns"
+                                active={usePathname() === '/sns'}>
+                                SNS
                             </NavLink>
                         </div>
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
                                 href="/status"
                                 active={usePathname() === '/status'}>
-                                Status
+                                ユーザー
                             </NavLink>
                         </div>
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
                                 href="/users"
                                 active={usePathname() === '/users'}>
-                                User
                             </NavLink>
                         </div>
                         
@@ -64,8 +66,7 @@ const Navigation = ({ user }) => {
                     {/* Settings Dropdown */}
                     <div className="hidden sm:flex sm:items-center sm:ml-6">
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            Gold: <ShowGold />
-                            &emsp;
+                            Gold: <ShowGold />&emsp;
                         </div>
                         <Dropdown
                             align="right"
@@ -104,7 +105,7 @@ const Navigation = ({ user }) => {
                             </DropdownButton>
                             { ログアウトボタン */}
                             <DropdownButton onClick={logout}>
-                                Logout
+                                ログアウト
                             </DropdownButton>
                         </Dropdown>
                     </div>
@@ -149,7 +150,7 @@ const Navigation = ({ user }) => {
                         <ResponsiveNavLink
                             href="/dashboard"
                             active={usePathname() === '/dashboard'}>
-                            Dashboard
+                            ホーム
                         </ResponsiveNavLink>
                     </div>
 
@@ -185,7 +186,7 @@ const Navigation = ({ user }) => {
                         <div className="mt-3 space-y-1">
                             {/* Authentication */}
                             <ResponsiveNavButton onClick={logout}>
-                                Logout
+                                ログアウト
                             </ResponsiveNavButton>
                         </div>
                     </div>

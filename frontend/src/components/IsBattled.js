@@ -30,7 +30,7 @@ const IsBattled = () => {
             // バトル前にAPIにリクエストを送って、ゴールドを減らす処理を行う
             const response = await axios.put('/api/status/battle')
 
-            if (response.status === 200) {
+            if (response.data.status) {
                 // バックエンドから返ってきた最新のデータを即座に反映
                 mutate({ ...data, status: response.data.status })  // mutateで状態を更新
                 setErrorMessage(null)  // エラーメッセージをクリア
